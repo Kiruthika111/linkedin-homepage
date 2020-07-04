@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:#f5f5f5;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #3F5070;
+  padding: 20px 10px;
+  padding-left: 100px;
+}
+
+
+.search-container {
+  
+  display: flex;
+}
+
+.search-container a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.search-container a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.search-container a:hover, a:active, a:focus {
+  color:#FFFFFF;
+  text-decoration: none;
+}
+
+.input[type=text] {
+
+  
+  
+  width: 130px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+.right-rail {
+	box-sizing: border-box;
+    float: right;
+    margin-right: -1px;
+    margin-left: 25px;
+}
+
+.mb2 {
+	margin-bottom: 8px!important;
+}
+
+.card-view {
+	box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    transition: box-shadow 83ms;
+    background-color: #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.feed-view {
+	transition-property: max-height,opacity;
+	padding-bottom: 12px!important;
+}
+
+.feed-heading {
+	display: flex!important;
+	padding-left: 12px!important;
+    padding-right: 12px!important;
+}
+
+.feed-title {
+	flex: 1;
+}
+
+.feed-text {
+    line-height: 1.5;
+	font-weight: 400;
+	color: rgba(0,0,0,.9);
+}
+
+.feed-list {
+	list-style: none!important;
+	margin-top: 8px!important;
+	margin-bottom: 4px!important;
+}
+
+.feed-news {
+	text-decoration: none;
+    font-weight: 600;
+    background-color: transparent;
+    border: 0;
+    color: #0073b1;
+}
+
+.feed-news-headline {
+	white-space: nowrap!important;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+	padding-right: 16px!important;
+	margin-top: 4px!important;
+	font-size: 1.4rem;
+    line-height: 1.42857;
+	font-weight: 600;
+	color: rgba(0,0,0,.9);
+}
+
+.bullet {
+	width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 12px;
+    border: 4px solid #33aada;
+}
+
+.font-medium {
+	font-size: 16px;
+}
+
+.feed-subtext {
+	padding-left: 28px;
+	white-space: nowrap!important;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+	display: inline-block!important;
+	width: 100%!important;
+	padding-right: 12px!important;
+	font-size: 10px;
+	font-weight: 400;
+	color: rgba(0,0,0,.6);
+    line-height: 1.33333;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header" style="padding-left: 100px" >
+ 
+    <div class="search-container">
+      <img src="C:\Users\New Pc\Downloads\logo2.png" style="
+    height: 37px;
+	  border-radius: 5px 5px 5px 5px;
+	  
+	"> &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="search" placeholder="Search" height="40px" width="180px" style="
+    height: 36px;
+    width: 208px; border-radius: 5px 0px 0px 5px; border: none;">
+	<button type="submit" style="height:36px; border-radius: 0px 5px 5px 0px; border: none;"><i class="fa fa-search"></i></button>
+	
+	
+      <nav style="padding-left:100px; display: flex; "  > 
+         <a href = "#" style="padding-right:50px; align:center; " >
+		 <span ><i class="fa fa-home" style="display: block;"></i></span>
+		 <span style="display: inline; ">Home</span></a> 
+		 <a href = "#" style="padding-right:50px;">
+		 <span><i class="fa fa-user-friends" style="display: block;"></i></span>
+		 <span style="display: inline; ">My Network</span></a> 
+		  <a href = "#" style="padding-right:50px;">
+		 <span><i class="fa fa-briefcase" style="display: block;"></i></span>
+		 <span style="display: inline; ">Jobs</span></a> 
+		 <a href = "#" style="padding-right:50px;">
+		 <span><i class="fa fa-comments" style="display: block;"></i></span>
+		 <span style="display: inline; ">Messaging</span></a> 
+		 
+		 <a href = "#" style="padding-right:50px;">
+		 <span><i class="fa fa-bell" style="display: block;"></i></span>
+		 <span style="display: inline; ">Notifications</span></a> 
+		 
+		 <a href = "#" style="padding-right:50px;">
+		 <span><i class="fas fa-user-circle" style="display: block;"></i></span>
+		 <span style="display: inline; "><button class="w3-button" style=" background-color: #ffffff00; border: none; color: white;">Me<i class="fa fa-caret-down"></i></button>
+         </span></a> 
+		 
+ 	
+      </nav>  
+    
+  </div>
+ 
+</div>
+<div class="mainpage three-column" style="width: 1200px;
+    box-sizing: content-box;
+    padding: 0 30px;
+    display: block;
+    margin: auto;
+    position: relative;
+	border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+	font-weight: 400; line-height:1.5;
+	">
+
+
+
+<section render-method="default" id="ember589" class="ad-banner-container is-header-zone ember-view">
+<iframe class="ad-banner" width="100%" height="17"  scrolling="no" title="Banner advertisement">
+</iframe>
+</section>
+<aside class="profile" style="opacity: 1; box-sizing: border-box; float: left; margin-bottom:24px; margin-right: -1px; width: 215px; background:#ffffff; display: block;" >
+<div class="profile-inside" style="overflow:hidden; border-radius: 2px; margin-bottom:8px; box-shadow:0 2px 3px; transition: box-shadow 83ms; margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; box-sizing:inherit; display: block;">
+<div class="profile-inside-2" style="padding: 0; text-align:center; width: 216px; box-shadow: 0 0 0 1px; background-color: #ffffff; background-clip: padding-box; border-radius: 2px; transition: box-shadow 83ms; margin: 0; border: 0; font-size: 100%; vertical-align: baseline; background: #ffffff00; box-sizing: inherit; display: block;font-weight:400;line-height:1.5;">
+<div class="profile-name" style="border-bottom: 1px solid; padding: 12px 12px 15px; word-wrap: break-word; word-break: break-word; margin:0; padding:0; font-size: 100%; vertical-align:baseline; background: transparent; box-sizing:inherit; display: block; font-weight: 400; line-height: 1.5;">
+<div class="profile-bg" style="background-position: center; background-size:462px; display: block; height:54px; margin:-12px -12px 0; padding:0; border:0; font-size: 100%; vertical-align: baseline; background: #0073b1; box-sizing:inherit; word-wrap:break-word; word-break: break-word;font-weight: 400; line-height: 1.5; ">
+</div>
+<a href="#" style="color: #0073b1; text-decoration: none; cursor: pointer; font-weight:600; background-color: transparent; display: block; margin:0; padding:0; font-size: 100%; vertical-align: baseline; background: transparent; box-sizing: inherit; word-wrap: break-word; word-break:break-word;">
+<div class="profile-picture" style="margin:0; padding:0; border:0; font-size: 100%; vertical-align:base; background: transparent; box-sizing: inherit; display: block; cursor: pointer; font-weight: 600; word-break: break-word; word-wrap: break-word;" >
+<img width="64" height="64" src="C:\Users\New Pc\Pictures\background\bg.jpg" style="border-radius: 50%; border:2px; box-shadow: 0 1.5px 3px 0; margin: -38px auto 12px; background-color: #ffffff; width: 72px; height: 72px; padding:0; vertical-align:baseline; font-size: 100%; cursor: pointer;">
+</div>
+<div class="name" style=" font-size: 1.6 rem; line-height: 1.5; font-weight: 600; color: #000000; margin:0; padding:0; border:0; vertical-align: baseline; background: transparent; box-sizing: inherit; display: block; cursor: pointer; word-wrap: break-word; word-break: break-word; text-align: center; ">Kiruthika Krishnamoorthy</div>
+</a>
+<p class="college" style="margin-top: 4px; font-size: 0.8rem; line-height: 1.333333; font-weight: 400; color:#A9A9A9; margin:0; padding:0; border:0; vertical-align: baseline; background: transparent; box-sizing: inherit; display: block; margin-block-start: 1em; margin-block-end : 1em; margin-inline-start: 0px; margin-inline-end: 0px; text-align: center;  ">Student at Coimbatore Institute of Technology</p>
+</div>
+<div class="widgets">
+<div class="entity-list">
+<ul class="entity-list row" style="display: flex; text-align: left; flex-direction: column; list-style-type: none; margin:0; padding: 0; border:0; font-size: 0.8rem; vertical-align: baseline; background: transparent; box-sizing: inherit; margin-block-start: 1em;  margin-block-end: 1em; margin-inline-start: 0px;margin-inline-end: 0px;font-weight: 400; line-height: 1.5; ">
+<li class="entity-list-item">
+<span style="align: left; text-align: left; color:#A9A9A9;">Who viewed your profile</span>
+<span style="float: right; color:blue; font-size: 12px; padding-right: 9px">113</span>
+</li>
+<li class="entity-list-item">
+<span style="align: left; text-align: left; color:#A9A9A9;">Connections</span>
+<span style="float: right; color:blue; font-size: 12px; padding-right: 9px">69</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside>
+
+<div class="core-rail" role="main" style=" display: block; width:600px; box-sizing: border-box; float: left; margin-bottom: 24px; margin-right: -1px; margin-left: 25px; opacity:1; margin: 0; padding-left: 25px; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; display: block; font-weight: 400; line-height:1.5;">
+<div id="ember48" class="ember-view" style=" margin:o; padding:0; border:0; font-size: 100%; vertical-align:baseline; background: transparent; box-sizing:inherit; display:block; font-weight:400; line-height:1.5; ">
+<div class="share-box-feed-entry__wrapper Elevation-2dp" style="margin: 0 0 8px; background: #fff; border-radius: 2px; color: #84878a;  display: flex; flex-direction: column; height: 100%; max-height: 100%; box-shadow: 0 0 1px; transition: box-shadow 83ms; padding: 0; border:0; font-size: 100%; vertical-align: baseline; box-sizing:inherit; font-weight: 400; line-height:1.5; ">
+<div class="display-flex align-items-center ml4" style=" display:flex; align-items: center; margin-left: 16px; margin: 0;  padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; box-sizing: inherit; color:#84878a; font-weight: 400; line-height: 1.5; ">
+<button class="share-box-feed-entry__trigger t-16 t-black--light t-bold" type="button" style="display: flex; flex-grow: 1; border-width:thin; margin: 0; padding: 16px; align-items: center; height: 72px; color: #696c6f; border-right: 1px solid; font-size: 1.6rem; line-height: 1.5; font-weight: 600; background: none; border: none; cursor: pointer; touch-action: manipulation; font-family: inherit; box-sizing: inherit;">
+<i class="	far fa-edit"></i>
+Start a post
+</button>
+<button class="share-box-feed-entry__media-trigger share-media-button__label--square " type="button" style="display: flex; flex-grow: 1; border-width:thin; padding: 16px; align-items: center; height: 72px; color: #696c6f; border-right: 1px solid; font-size: 1.6rem; line-height: 1.5; font-weight: 600; background: none; border: none; cursor: pointer; touch-action: manipulation; font-family: inherit; box-sizing: inherit;">
+<i class="fa fa-camera"></i>
+</button>
+<button class="share-box-feed-entry__media-trigger share-media-button__label--square " type="button" style="display: flex; flex-grow: 1; border-width:thin;  margin: 0; padding: 16px; align-items: center; height: 72px; color: #696c6f; border-right: 1px solid; font-size: 1.6rem; line-height: 1.5; font-weight: 600; background: none; border: none; cursor: pointer; touch-action: manipulation; font-family: inherit; box-sizing: inherit;">
+<i class='far fa-play-circle'></i>
+</button>
+<button class="share-box-feed-entry__media-trigger share-media-button__label--square " type="button" style="display: flex; flex-grow: 1; border-width:thin;  margin: 0; padding: 16px; align-items: center; height: 72px; color: #696c6f; border-right: 1px solid; font-size: 1.6rem; line-height: 1.5; font-weight: 600; background: none; border: none; cursor: pointer; touch-action: manipulation; font-family: inherit; box-sizing: inherit;">
+<i class='far fa-file-alt'></i>
+</button>
+</div>
+
+<div id="ember5" class="dropdownn" style=" margin-bottom: 8px; box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent; font-weight: 400;
+    color: rgba(0,0,0,.9); line-height:1.5; ">
+<button aria-expanded="false" data-control-name="feed_sort_dropdown_trigger" id="ember5999" class="display-flex full-width artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view" type="button" tabindex="0" style="width: 100%; display:flex; background:none; border: none; padding:0; cursor:pointer; touch-action:manipulation; font-family: inherit;">
+<hr class="flex-grow-1 mr2 mvA" style="vertical-align:middle; flex-grow:1; margin-bottom:auto; margin-top: auto; margin-right:8px; border: 0;
+    display: block;
+    height: 1px;
+    margin: 0 0 1rem;
+    padding: 0;
+    border-color: rgba(0,0,0,.15);
+    border-top: 1px solid rgba(0,0,0,.15); box-sizing: inherit;">
+
+</button>
+</div>
+
+
+
+<div class="share-box-feed-entry__article-cta  t-14 t-black--light t-normal">
+<a href="#" data-control-name="share.publish_post" target="_blank" class="link-without-visited-state hoverable-link-text">Write an article</a>
+" on LinkedIn"
+</div>
+
+</div>
+
+</div>
+
+<div id="ember56" class="dropdown" style=" margin-bottom: 8px; box-sizing: border-box; cursor: pointer; display: block; margin: 0; padding: 0; position: relative;border: 0; font-size: 100%; vertical-align: baseline; background: transparent; font-weight: 400; color: rgba(0,0,0,.9); line-height:1.5; ">
+<button aria-expanded="false" data-control-name="feed_sort_dropdown_trigger" id="ember57" class="display-flex full-width artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view" type="button" tabindex="0" style="width: 100%; display:flex; background:none; border: none; padding:0; cursor:pointer; touch-action:manipulation; font-family: inherit;">
+<hr class="flex-grow-1 mr2 mvA" style="vertical-align:middle; flex-grow:1; margin-bottom:auto; margin-top: auto; margin-right:8px; border: 0;
+    display: block;
+    height: 1px;
+    margin: 1rem 0 24px;
+    padding: 0;
+    border-color: rgba(0,0,0,.15);
+    border-top: 1px solid rgba(0,0,0,.15); box-sizing: inherit;">
+
+</button>
+</div>
+
+<div id="ember59" class="ember-view" style="margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent; box-sizing: inherit; display: block; font-weight: 400;
+    color: rgba(0,0,0,.9); line-height: 1.5;
+	display:flex;
+	">
+<div  id="ember62" class="relative ember-view" >
+<div  id="ember65" class="feed-shared-update-v2 feed-shared-update-v2--minimal-padding relative full-height feed-shared-update-v2--e2e Elevation-2dp ember-view" style="margin-left: 0;
+    margin-right: 0;
+    border-radius: 2px;
+	padding: 0;
+    margin: 0 5px 8px;
+    background-color: #fff;
+	position: relative;
+	height: 100%;
+	box-shadow: 0 2px 3px;
+    transition: box-shadow 83ms;
+	">
+
+<div id="ember88" class="display-flex feed-shared-actor display-flex ember-view" style="display:flex; flex-wrap:nowrap;">
+
+<a data-control-id="0ZRzrmj1bkBR3+dT8+bCCw==" data-control-name="actor_container" target="_self" id="ember89" class="feed-shared-actor__container-link relative display-flex flex-grow-1 app-aware-link ember-view" style=" display:flex;  flex-grow:1;">
+
+
+<div class="feed-shared-actor__image relative" data-control-id="0ZRzrmj1bkBR3+dT8+bCCw==" data-control-name="actor_picture"  style="display:block";>
+
+<span class="js-feed-shared-actor__avatar" >
+<div id="ember90" class="feed-shared-actor__avatar ivm-image-view-model ember-view" style="display:block"; >
+
+<div id="ember91" class="display-flex ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag ember-view"  style="display:block";>
+<div id="ember199" class="presence-entity presence-entity--size-3 ember-view" style="display:block"; >
+<img src="C:\Users\New Pc\Pictures\background\green.jpg" id="ember200" class="avatar-image" style="height: 25px; width:25px; border-radius:50%;">
+
+
+</div>
+
+</div>
+
+</div>
+
+</span>
+</div>
+
+<div class="feed-shared-actor__meta relative" data-control-id="0ZRzrmj1bkBR3+dT8+bCCw==" data-control-name="actor" style="flex-grow:1;";>
+
+<span class="feed-shared-actor__title">
+
+<span class="feed-shared-actor__name t-14 t-black t-bold hoverable-link-text">
+
+<span dir="ltr">Barath Vignesh</span>
+
+</span>
+
+</span>
+<span class="feed-shared-actor__description t-12 t-black--light t-normal">
+<div id="ember98" class="truncate feed-shared-text-view white-space-pre-wrap break-words ember-view">
+<span>
+"Official Campus Ambassador Intern at International MUN | Virtual Experience Program Participant at Data@ANZ Program | Decision Science Student"
+
+</span>
+</div>
+</span>
+</div>
+
+</a>
+
+</div>
+<span>
+<img src="C:\Users\New Pc\Downloads\bv.jpg" height="300px" width="400px" style="align:center; display: block;
+  margin-left: auto;
+  margin-right: auto;">
+ <img src="C:\Users\New Pc\Downloads\like.png" height="35px" width="250px" style="align:center; display: block;">
+  
+</span>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<aside class="right-rail">
+<div class="mb2">
+<section class="card-view">
+<div class="feed-view">
+<div class="feed-heading">
+<h2 class="feed-title feed-text">
+<span class="feed-text font-medium">Today’s news and views</span>
+</h2>
+</div>
+<ul class="feed-list" style="
+    margin-block-start: 0px;
+    margin-inline-start: -33px;
+">
+	<li>
+	<a class="feed-news">
+		<div class="feed-news-headline">
+			<span class="bullet"></span>
+			<span class="font-medium">Chinese phone makers in a tight spot</span>
+		</div>
+		<span class="feed-subtext">
+			1d ago • 1,799 readers
+		</span>
+	</a>
+	</li>
+	<li>
+	<a class="feed-news">
+		<div class="feed-news-headline">
+			<span class="bullet"></span>
+			<span class="font-medium">SBI ups hiring: Reports</span>
+		</div>
+		<span class="feed-subtext">
+			2d ago • 1,099 readers
+		</span>
+	</a>
+	</li>
+	<li>
+	<a class="feed-news">
+		<div class="feed-news-headline">
+			<span class="bullet"></span>
+			<span class="font-medium">Zydus Covid vaccine nears human trial</span>
+		</div>
+		<span class="feed-subtext">
+			3d ago • 2,799 readers
+		</span>
+	</a>
+	</li>
+	<li>
+	<a class="feed-news">
+		<div class="feed-news-headline">
+			<span class="bullet"></span>
+			<span class="font-medium">Tesla now most valuable car company</span>
+		</div>
+		<span class="feed-subtext">
+			4d ago • 1,234 readers
+		</span>
+	</a>
+	</li>
+	<li>
+	<a class="feed-news">
+		<div class="feed-news-headline">
+			<span class="bullet"></span>
+			<span class="font-medium">Negotiating pay in a pandemic</span>
+		</div>
+		<span class="feed-subtext">
+			1d ago • 2,890 readers
+		</span>
+	</a>
+	</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+
+
+</body>
+</html>
